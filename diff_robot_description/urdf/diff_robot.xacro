@@ -2,7 +2,8 @@
 <robot name="diff_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
 <xacro:include filename="$(find diff_robot_description)/urdf/materials.xacro" />
-<xacro:include filename="$(find diff_robot_description)/urdf/diff_robot.trans" />
+<xacro:include filename="$(find diff_robot_description)/urdf/diff_robot.gazebo" /> 
+
 <link name="base_link">
   <inertial>
     <origin xyz="5.6632708493229326e-15 -9.161173432728274e-16 0.06769835530977125" rpy="0 0 0"/>
@@ -24,7 +25,7 @@
   </collision>
 </link>
 
-<link name="imu_1">
+<link name="imu">
   <inertial>
     <origin xyz="-1.1999536222984447e-05 -9.133494040338212e-05 0.0008621646654776854" rpy="0 0 0"/>
     <mass value="0.00499712942650714"/>
@@ -33,19 +34,19 @@
   <visual>
     <origin xyz="-0.0 -0.0 -0.071" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find diff_robot_description)/meshes/imu_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find diff_robot_description)/meshes/imu.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="opaque636363"/>
   </visual>
   <collision>
     <origin xyz="-0.0 -0.0 -0.071" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find diff_robot_description)/meshes/imu_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find diff_robot_description)/meshes/imu.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="driver_1">
+<link name="driver">
   <inertial>
     <origin xyz="-0.08835000994870672 -0.0006931558000162142 0.01645048758441489" rpy="0 0 0"/>
     <mass value="0.6142590344888996"/>
@@ -54,19 +55,19 @@
   <visual>
     <origin xyz="-0.0 -0.0 -0.071" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find diff_robot_description)/meshes/driver_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find diff_robot_description)/meshes/driver.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="led_green"/>
   </visual>
   <collision>
     <origin xyz="-0.0 -0.0 -0.071" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find diff_robot_description)/meshes/driver_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find diff_robot_description)/meshes/driver.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="pc_1">
+<link name="pc">
   <inertial>
     <origin xyz="0.0 0.0 0.02109885707652978" rpy="0 0 0"/>
     <mass value="9.924188790786896"/>
@@ -75,19 +76,19 @@
   <visual>
     <origin xyz="-0.0 -0.0 -0.152" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find diff_robot_description)/meshes/pc_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find diff_robot_description)/meshes/pc.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="steel_satin"/>
   </visual>
   <collision>
     <origin xyz="-0.0 -0.0 -0.152" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find diff_robot_description)/meshes/pc_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find diff_robot_description)/meshes/pc.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="lidar_1">
+<link name="lidar">
   <inertial>
     <origin xyz="0.00829409957031958 0.0 0.031201142222790967" rpy="0 0 0"/>
     <mass value="1.151561654231425"/>
@@ -96,19 +97,19 @@
   <visual>
     <origin xyz="-0.0 -0.0 -0.194" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find diff_robot_description)/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find diff_robot_description)/meshes/lidar.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="steel_satin"/>
   </visual>
   <collision>
     <origin xyz="-0.0 -0.0 -0.194" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find diff_robot_description)/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find diff_robot_description)/meshes/lidar.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="caster1_1">
+<link name="caster1">
   <inertial>
     <origin xyz="-5.551115123125783e-17 0.0 -0.0075" rpy="0 0 0"/>
     <mass value="0.13152801243029266"/>
@@ -117,19 +118,19 @@
   <visual>
     <origin xyz="-0.14 -0.14 -0.02" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find diff_robot_description)/meshes/caster1_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find diff_robot_description)/meshes/caster1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="steel_satin"/>
   </visual>
   <collision>
     <origin xyz="-0.14 -0.14 -0.02" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find diff_robot_description)/meshes/caster1_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find diff_robot_description)/meshes/caster1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="caster2_1">
+<link name="caster2">
   <inertial>
     <origin xyz="0.0 0.0 -0.0075" rpy="0 0 0"/>
     <mass value="0.13152801243029266"/>
@@ -138,19 +139,19 @@
   <visual>
     <origin xyz="0.14 -0.14 -0.02" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find diff_robot_description)/meshes/caster2_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find diff_robot_description)/meshes/caster2.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="steel_satin"/>
   </visual>
   <collision>
     <origin xyz="0.14 -0.14 -0.02" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find diff_robot_description)/meshes/caster2_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find diff_robot_description)/meshes/caster2.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="caster3_1">
+<link name="caster3">
   <inertial>
     <origin xyz="0.0 0.0 -0.0075" rpy="0 0 0"/>
     <mass value="0.13152801243029266"/>
@@ -159,19 +160,19 @@
   <visual>
     <origin xyz="0.14 0.14 -0.02" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find diff_robot_description)/meshes/caster3_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find diff_robot_description)/meshes/caster3.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="steel_satin"/>
   </visual>
   <collision>
     <origin xyz="0.14 0.14 -0.02" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find diff_robot_description)/meshes/caster3_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find diff_robot_description)/meshes/caster3.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="caster4_1">
+<link name="caster4">
   <inertial>
     <origin xyz="0.0 0.0 -0.0075" rpy="0 0 0"/>
     <mass value="0.13152801243029266"/>
@@ -180,19 +181,19 @@
   <visual>
     <origin xyz="-0.14 0.14 -0.02" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find diff_robot_description)/meshes/caster4_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find diff_robot_description)/meshes/caster4.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="steel_satin"/>
   </visual>
   <collision>
     <origin xyz="-0.14 0.14 -0.02" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find diff_robot_description)/meshes/caster4_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find diff_robot_description)/meshes/caster4.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="webcam_1">
+<link name="webcam">
   <inertial>
     <origin xyz="0.004240271368868204 0.0004112241754047119 0.005279292288666831" rpy="0 0 0"/>
     <mass value="0.03613025596827851"/>
@@ -201,19 +202,19 @@
   <visual>
     <origin xyz="-0.195 -0.0 -0.071" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find diff_robot_description)/meshes/webcam_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find diff_robot_description)/meshes/webcam.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="steel_satin"/>
   </visual>
   <collision>
     <origin xyz="-0.195 -0.0 -0.071" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find diff_robot_description)/meshes/webcam_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find diff_robot_description)/meshes/webcam.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="left_wheel_1">
+<link name="left_wheel">
   <inertial>
     <origin xyz="-9.54315829915231e-09 0.0313791649458284 1.4462396151493362e-07" rpy="0 0 0"/>
     <mass value="0.9491110270156334"/>
@@ -222,19 +223,19 @@
   <visual>
     <origin xyz="-0.0 -0.1605 -0.08" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find diff_robot_description)/meshes/left_wheel_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find diff_robot_description)/meshes/left_wheel.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="opaque636363"/>
   </visual>
   <collision>
     <origin xyz="-0.0 -0.1605 -0.08" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find diff_robot_description)/meshes/left_wheel_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find diff_robot_description)/meshes/left_wheel.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="right_wheel_1">
+<link name="right_wheel">
   <inertial>
     <origin xyz="9.543158056466398e-09 -0.031379164945828264 1.446239616537115e-07" rpy="0 0 0"/>
     <mass value="0.9491110270156369"/>
@@ -243,19 +244,19 @@
   <visual>
     <origin xyz="-0.0 0.1605 -0.08" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find diff_robot_description)/meshes/right_wheel_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find diff_robot_description)/meshes/right_wheel.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="opaque636363"/>
   </visual>
   <collision>
     <origin xyz="-0.0 0.1605 -0.08" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find diff_robot_description)/meshes/right_wheel_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find diff_robot_description)/meshes/right_wheel.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="top_plate_1">
+<link name="top_plate">
   <inertial>
     <origin xyz="0.06 0.105 0.002999999999999975" rpy="0 0 0"/>
     <mass value="2.3338049999999986"/>
@@ -264,14 +265,14 @@
   <visual>
     <origin xyz="0.06 0.105 -0.146" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find diff_robot_description)/meshes/top_plate_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find diff_robot_description)/meshes/top_plate.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="steel_satin"/>
   </visual>
   <collision>
     <origin xyz="0.06 0.105 -0.146" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find diff_robot_description)/meshes/top_plate_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find diff_robot_description)/meshes/top_plate.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -279,75 +280,75 @@
 <joint name="imu_joint" type="fixed">
   <origin xyz="0.0 0.0 0.071" rpy="0 0 0"/>
   <parent link="base_link"/>
-  <child link="imu_1"/>
+  <child link="imu"/>
 </joint>
 
 <joint name="board_joint" type="fixed">
   <origin xyz="0.0 0.0 0.071" rpy="0 0 0"/>
   <parent link="base_link"/>
-  <child link="driver_1"/>
+  <child link="driver"/>
 </joint>
 
 <joint name="pc_joint" type="fixed">
   <origin xyz="0.06 0.105 0.006" rpy="0 0 0"/>
-  <parent link="top_plate_1"/>
-  <child link="pc_1"/>
+  <parent link="top_plate"/>
+  <child link="pc"/>
 </joint>
 
 <joint name="lidar_joint" type="fixed">
   <origin xyz="0.0 0.0 0.042" rpy="0 0 0"/>
-  <parent link="pc_1"/>
-  <child link="lidar_1"/>
+  <parent link="pc"/>
+  <child link="lidar"/>
 </joint>
 
 <joint name="caster1_joint" type="fixed">
-  <origin xyz="0.14 0.14 0.02" rpy="0 0 0"/>
+  <origin xyz="0.14 0.14 0.03" rpy="0 0 0"/>
   <parent link="base_link"/>
-  <child link="caster1_1"/>
+  <child link="caster1"/>
 </joint>
 
 <joint name="caster2_joint" type="fixed">
-  <origin xyz="-0.14 0.14 0.02" rpy="0 0 0"/>
+  <origin xyz="-0.14 0.14 0.03" rpy="0 0 0"/>
   <parent link="base_link"/>
-  <child link="caster2_1"/>
+  <child link="caster2"/>
 </joint>
 
 <joint name="caster3_joint" type="fixed">
-  <origin xyz="-0.14 -0.14 0.02" rpy="0 0 0"/>
+  <origin xyz="-0.14 -0.14 0.03" rpy="0 0 0"/>
   <parent link="base_link"/>
-  <child link="caster3_1"/>
+  <child link="caster3"/>
 </joint>
 
 <joint name="caster4_joint" type="fixed">
-  <origin xyz="0.14 -0.14 0.02" rpy="0 0 0"/>
+  <origin xyz="0.14 -0.14 0.03" rpy="0 0 0"/>
   <parent link="base_link"/>
-  <child link="caster4_1"/>
+  <child link="caster4"/>
 </joint>
 
 <joint name="webcam_joint" type="fixed">
   <origin xyz="0.195 0.0 0.071" rpy="0 0 0"/>
   <parent link="base_link"/>
-  <child link="webcam_1"/>
+  <child link="webcam"/>
 </joint>
 
-<joint name="left_joint" type="continuous">
+<joint name="left_wheel_joint" type="continuous">
   <origin xyz="0.0 0.1605 0.08" rpy="0 0 0"/>
   <parent link="base_link"/>
-  <child link="left_wheel_1"/>
+  <child link="left_wheel"/>
   <axis xyz="0.0 1.0 0.0"/>
 </joint>
 
-<joint name="right_joint" type="continuous">
+<joint name="right_wheel_joint" type="continuous">
   <origin xyz="0.0 -0.1605 0.08" rpy="0 0 0"/>
   <parent link="base_link"/>
-  <child link="right_wheel_1"/>
+  <child link="right_wheel"/>
   <axis xyz="0.0 1.0 0.0"/>
 </joint>
 
 <joint name="top_cover_joint" type="fixed">
   <origin xyz="-0.06 -0.105 0.146" rpy="0 0 0"/>
   <parent link="base_link"/>
-  <child link="top_plate_1"/>
+  <child link="top_plate"/>
 </joint>
 
 </robot>

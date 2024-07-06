@@ -1,0 +1,46 @@
+
+#go to workspace
+
+cd dev_ws
+
+
+#set rights to usb ports
+
+sudo chmod 666 /dev/ttyUSB*
+
+the password = Rebel123
+
+
+#bring up model
+
+ros2 launch hoverboard_demo_bringup hoverboard.launch.py 
+
+
+# run simultanious localization and mapping tool 
+
+ros2 run slam_toolbox async_slam_toolbox_node
+
+#run map saver whem map is made 
+ros2 run nav2_map_server map_saver_cli -f my_new_map 
+
+
+#run navigation 
+ros2 launch nav2_bringup navigation_launch.py    <-- working 
+
+
+ros2 launch nav2_bringup bringup_launch.py map:=my_map.yaml
+
+
+
+#more handy dev lines 
+rosdep install --from-paths src -y --ignore-src
+  
+  
+  ros2 launch rplidar_ros rplidar_a1_launch.py 
+  
+  #set command velocity prio's
+ros2 run twist_mux twist_mux --ros-args --params-file src/hoverboard_ros2_control/hoverboard_demo_bringup/config/twist_mux.yaml -r cmd_vel_out:=/hoverboard_base_controller/cmd_vel_unstamped
+
+#source environment
+. install/setup.bash
+
